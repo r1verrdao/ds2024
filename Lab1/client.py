@@ -1,12 +1,12 @@
 import socket
 
-IP = socket.gethostbyname(socket.gethostname()) # Get the IP
-PORT = 8080
-ADDR = (IP, PORT) # the address
-SIZE = 1024
-FORMAT = "utf-8"
+IP: str = socket.gethostbyname(socket.gethostname()) # Get the IP
+PORT: int = 8080
+ADDR: tuple = (IP, PORT) # the address
+SIZE: int = 1024
+FORMAT: str = "utf-8"
 
-FILENAME = "file.txt"
+FILENAME: str = "file.txt"
 
 def main():
     # Create TCP socket for client
@@ -33,8 +33,9 @@ def main():
     f.close()
 
     # When sending the file is finished, close the connection
-    print(f"[CLIENT] Closing connection !")
     client.close()
+
+
 
 if __name__ == "__main__":
     main()
